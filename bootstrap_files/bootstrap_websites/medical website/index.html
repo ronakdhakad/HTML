@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Medicare Clinic | Single Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS (only CSS, no JS) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --primary-color: #0d6efd;   /* Blue */
+      --accent-color:  #20c997;   /* Teal */
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    .navbar-brand span.logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: .35rem;
+      background: var(--accent-color);
+      color: #fff;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .btn-main {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      color: #fff;
+    }
+
+    .btn-main:hover,
+    .btn-main:focus {
+      background: #17a589;
+      border-color: #17a589;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      color: #fff;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .hero h1 {
+      font-weight: 700;
+    }
+
+    .hero-badge {
+      background: rgba(255,255,255,.1);
+      border-radius: 999px;
+      padding: .25rem .75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .8rem;
+    }
+
+    /* Simple right side hero box (no slider) */
+    .hero-info-box {
+      border-radius: 1.25rem;
+      background: rgba(255,255,255,0.1);
+      padding: 1.75rem 1.5rem;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    .hero-info-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,.12);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .hero-info-list {
+      margin-top: 1rem;
+      padding-left: 1rem;
+      font-size: .9rem;
+      color: rgba(255,255,255,.85);
+    }
+
+    .hero-info-list li + li {
+      margin-top: .25rem;
+    }
+
+    /* Services */
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(13,110,253,.08);
+      color: var(--primary-color);
+      font-size: 1.4rem;
+    }
+
+    .service-card {
+      transition: transform .2s ease, box-shadow .2s ease;
+      border: 1px solid rgba(0,0,0,.04);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.06);
+    }
+
+    /* Form section */
+    .section-title span {
+      display: inline-block;
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    .section-title h2 {
+      font-weight: 700;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 .2rem rgba(32,201,151,.25);
+    }
+
+    /* Fixed banner (parallax style) */
+    .fixed-banner {
+      background-image: linear-gradient(rgba(13,110,253,.85), rgba(32,201,151,.85)),
+        url("https://images.pexels.com/photos/1266036/pexels-photo-1266036.jpeg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+      padding: 4rem 0;
+    }
+
+    .fixed-banner h2 {
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer {
+      background: #020b1a;
+      color: #e2e6ea;
+    }
+
+    footer a {
+      color: #9ad5ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Floating Button + CSS Modal */
+    .floating-btn {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 1050;
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      font-weight: 600;
+      padding-inline: 1.2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .floating-btn span.icon {
+      display: inline-flex;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,.18);
+      font-size: .9rem;
+    }
+
+    .floating-btn:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
+    /* Pure CSS Modal via :target */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1100;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay:target {
+      display: flex;
+    }
+
+    .modal-content-custom {
+      max-width: 480px;
+      width: 100%;
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.75rem 1.5rem 1.5rem;
+      box-shadow: 0 18px 45px rgba(0,0,0,.18);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 1rem;
+      top: .9rem;
+      text-decoration: none;
+      font-size: 1.5rem;
+      color: #6c757d;
+    }
+
+    .modal-close:hover {
+      color: #000;
+    }
+
+    .badge-pill {
+      border-radius: 999px;
+    }
+
+    /* Small tweaks */
+    @media (max-width: 767.98px) {
+      .hero {
+        text-align: center;
+      }
+
+      .hero-info-box {
+        margin-top: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER / NAVBAR -->
+<header class="border-bottom bg-white sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <span class="logo-icon">+</span>
+        <span class="fw-bold">Medicare<span class="text-primary">Care</span></span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Simple menu: links will work even without JS because collapse is optional -->
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#appointment">Appointment</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a href="#appointment" class="btn btn-main btn-sm">Book Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO SECTION (NO SLIDER) -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <div class="hero-badge mb-3">
+          <span class="badge bg-light text-dark me-1">24/7</span>
+          Trusted multi-specialty medical care
+        </div>
+        <h1 class="display-5 mb-3">Your Health, Our Priority.</h1>
+        <p class="mb-4">
+          MedicareCare Clinic provides modern diagnostics, experienced doctors and compassionate
+          nursing—under one roof. Book appointments online and get care you can truly rely on.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="#appointment" class="btn btn-light text-primary fw-semibold">
+            Book Appointment
+          </a>
+          <a href="#services" class="btn btn-outline-light">
+            View Services
+          </a>
+        </div>
+        <p class="mt-3 mb-0 small text-white-50">
+          Emergency? Call <strong>+91-98765-43210</strong>
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="hero-info-box">
+          <div class="hero-info-badge mb-3">
+            🏥 Multi-Speciality • OPD • Lab
+          </div>
+          <h3 class="h5 mb-2">Why choose MedicareCare Clinic?</h3>
+          <ul class="hero-info-list">
+            <li>Experienced doctors for your entire family.</li>
+            <li>On-site lab, ECG, X-ray and pharmacy.</li>
+            <li>Clean, safe and patient-friendly environment.</li>
+            <li>Cashless & insurance assistance available.</li>
+          </ul>
+          <p class="small mt-3 mb-0 text-white-50">
+            Walk-in patients are welcome. Appointment booking helps reduce waiting time.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4 section-title">
+      <span>Our Services</span>
+      <h2 class="mt-2">Comprehensive Medical Care</h2>
+      <p class="text-muted mb-0">
+        All essential healthcare services in one modern, patient-friendly clinic.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Service 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card service-card h-100 p-3">
+          <div class="card-body">
+            <div class="service-icon mb-3">
+              🩺
+            </div>
+            <h5 class="card-title">General &amp; Family Medicine</h5>
+            <p class="card-text text-muted">
+              Routine check-ups, fever, infections, lifestyle diseases and long-term care for all age groups.
+            </p>
+            <ul class="list-unstyled small mb-0">
+              <li>• Annual health check-ups</li>
+              <li>• Diabetes &amp; hypertension management</li>
+              <li>• Child &amp; senior citizen care</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card service-card h-100 p-3">
+          <div class="card-body">
+            <div class="service-icon mb-3">
+              🧬
+            </div>
+            <h5 class="card-title">Diagnostics &amp; Lab Tests</h5>
+            <p class="card-text text-muted">
+              Accurate reports with fully automated lab, handled by experienced pathologists and technicians.
+            </p>
+            <ul class="list-unstyled small mb-0">
+              <li>• Full body health packages</li>
+              <li>• Hormone &amp; thyroid testing</li>
+              <li>• ECG, X-ray &amp; ultrasound</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card service-card h-100 p-3">
+          <div class="card-body">
+            <div class="service-icon mb-3">
+              💊
+            </div>
+            <h5 class="card-title">Pharmacy &amp; Day-care</h5>
+            <p class="card-text text-muted">
+              In-house pharmacy and day-care facility for IV infusions, vaccinations and minor procedures.
+            </p>
+            <ul class="list-unstyled small mb-0">
+              <li>• Branded &amp; generic medicines</li>
+              <li>• Vaccination for all age groups</li>
+              <li>• Observation &amp; recovery room</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card service-card h-100 p-3">
+          <div class="card-body">
+            <div class="service-icon mb-3">
+              ❤️
+            </div>
+            <h5 class="card-title">Cardiology</h5>
+            <p class="card-text text-muted">
+              Preventive heart screening, ECG interpretation and management of common heart conditions.
+            </p>
+            <ul class="list-unstyled small mb-0">
+              <li>• BP &amp; cholesterol control</li>
+              <li>• ECG &amp; stress evaluation</li>
+              <li>• Lifestyle modification plans</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card service-card h-100 p-3">
+          <div class="card-body">
+            <div class="service-icon mb-3">
+              🧠
+            </div>
+            <h5 class="card-title">Mental Wellness</h5>
+            <p class="card-text text-muted">
+              Confidential counselling and evidence-based treatment for stress, anxiety and depression.
+            </p>
+            <ul class="list-unstyled small mb-0">
+              <li>• Stress management</li>
+              <li>• Sleep &amp; mood disorders</li>
+              <li>• Long-term follow-up care</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card service-card h-100 p-3">
+          <div class="card-body">
+            <div class="service-icon mb-3">
+              👶
+            </div>
+            <h5 class="card-title">Women &amp; Child Health</h5>
+            <p class="card-text text-muted">
+              Preventive, antenatal and paediatric care with a focus on holistic development.
+            </p>
+            <ul class="list-unstyled small mb-0">
+              <li>• Antenatal check-ups</li>
+              <li>• Growth &amp; vaccination charts</li>
+              <li>• Nutrition counselling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- APPOINTMENT / FORM SECTION -->
+<section id="appointment" class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-6">
+        <div class="section-title mb-3">
+          <span>Book Appointment</span>
+          <h2 class="mt-2">Plan Your Visit</h2>
+        </div>
+        <p class="text-muted">
+          Fill in your details and our care coordinator will call you back to confirm your appointment.
+          For emergencies, please call us directly on the helpline number.
+        </p>
+
+        <ul class="list-unstyled text-muted small">
+          <li>• Same-day slots for fever, infections and injuries</li>
+          <li>• Dedicated chronic care clinic for diabetes, BP and thyroid</li>
+          <li>• Insurance &amp; corporate tie-ups available</li>
+        </ul>
+
+        <div class="mt-3">
+          <span class="badge bg-primary badge-pill me-2">OPD 8am – 9pm</span>
+          <span class="badge bg-success badge-pill">Emergency 24x7</span>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h5 class="mb-3">Appointment Request Form</h5>
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" placeholder="Your name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Mobile Number</label>
+                  <input type="tel" class="form-control" placeholder="+91-XXXXXXXXXX" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" placeholder="you@example.com">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Preferred Date</label>
+                  <input type="date" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Department</label>
+                  <select class="form-select" required>
+                    <option selected disabled>Choose...</option>
+                    <option>General Medicine</option>
+                    <option>Cardiology</option>
+                    <option>Orthopaedics</option>
+                    <option>Paediatrics</option>
+                    <option>Gynaecology</option>
+                    <option>Diagnostics / Lab</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Preferred Time</label>
+                  <select class="form-select">
+                    <option selected>Any available</option>
+                    <option>08:00 – 11:00</option>
+                    <option>11:00 – 14:00</option>
+                    <option>16:00 – 19:00</option>
+                    <option>19:00 – 21:00</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Brief Concern</label>
+                  <textarea class="form-control" rows="3" placeholder="Describe your symptoms or concern..."></textarea>
+                </div>
+                <div class="col-12 d-grid">
+                  <button type="submit" class="btn btn-main">
+                    Submit Request
+                  </button>
+                </div>
+                <div class="col-12">
+                  <p class="small text-muted mb-0">
+                    By submitting this form you agree to be contacted via phone / WhatsApp for appointment confirmation.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIXED BANNER SECTION -->
+<section class="fixed-banner">
+  <div class="container text-center text-md-start">
+    <div class="row align-items-center g-4">
+      <div class="col-md-8">
+        <h2 class="mb-2">Stay Ahead with Preventive Health Check-ups.</h2>
+        <p class="mb-0">
+          Book our annual health packages and detect lifestyle diseases before they become serious.
+          Ideal for working professionals and senior citizens.
+        </p>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <a href="#appointment" class="btn btn-light text-primary fw-semibold">
+          View Health Packages
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER / CONTACT SECTION -->
+<footer id="contact" class="pt-5 pb-3">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5 class="mb-3">MedicareCare Clinic</h5>
+        <p class="small mb-2">
+          A modern neighbourhood health centre combining compassionate doctors, advanced diagnostics
+          and transparent pricing.
+        </p>
+        <p class="small mb-0">
+          <strong>Address:</strong> 21, Wellness Avenue, Near City Hospital, Indore – 452001
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h6 class="mb-3">Contact</h6>
+        <p class="small mb-1">
+          Phone: <a href="tel:+919876543210">+91-98765-43210</a>
+        </p>
+        <p class="small mb-1">
+          Email: <a href="mailto:hello@medicarecare.in">hello@medicarecare.in</a>
+        </p>
+        <p class="small mb-0">
+          OPD Hours: Mon – Sun, 08:00 AM to 09:00 PM
+        </p>
+      </div>
+      <div class="col-md-4">
+        <h6 class="mb-3">Quick Links</h6>
+        <ul class="list-unstyled small mb-0">
+          <li><a href="#services">Our Services</a></li>
+          <li><a href="#appointment">Book an Appointment</a></li>
+          <li><a href="#home">Emergency Information</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="border-secondary border-opacity-25 mt-4 mb-3">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-secondary">
+      <span>© <span id="yearSpan">2025</span> MedicareCare Clinic. All rights reserved.</span>
+      <span class="mt-2 mt-md-0">Designed with ❤️ for better healthcare.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTON THAT OPENS MODAL -->
+<a href="#infoModal" class="btn btn-main floating-btn">
+  <span class="icon">?</span>
+  Need Help
+</a>
+
+<!-- PURE CSS MODAL (NO JS) -->
+<div id="infoModal" class="modal-overlay">
+  <div class="modal-content-custom">
+    <a href="#close" class="modal-close" aria-label="Close">&times;</a>
+    <h5 class="mb-2">How can we help you?</h5>
+    <p class="text-muted small mb-3">
+      Tell us if you are booking for routine check-up, follow-up visit or a new complaint. Our team will guide you to the right doctor and time slot.
+    </p>
+    <ul class="small text-muted mb-3">
+      <li>For chest pain, breathlessness or sudden weakness, use emergency services immediately.</li>
+      <li>For lab reports or prescription refills, keep your patient ID handy.</li>
+      <li>You can also WhatsApp us on <strong>+91-98765-43210</strong>.</li>
+    </ul>
+    <a href="#appointment" class="btn btn-main w-100 mb-2">Go to Appointment Form</a>
+    <a href="#close" class="btn btn-outline-secondary w-100">Close</a>
+  </div>
+</div>
+
+</body>
+</html>

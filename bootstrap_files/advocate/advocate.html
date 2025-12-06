@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Adv. Raj Sharma | Advocate & Legal Consultant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS (only CSS) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --primary-color: #0b2f6a;  /* Dark blue – professional */
+      --accent-color:  #c89b3c;  /* Gold – legal vibe */
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar-brand span.logo-box {
+      width: 34px;
+      height: 34px;
+      border-radius: 4px;
+      border: 2px solid var(--accent-color);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: .45rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      font-size: .9rem;
+    }
+
+    .nav-link.active {
+      color: var(--accent-color) !important;
+      font-weight: 600;
+    }
+
+    .btn-main {
+      background: var(--accent-color);
+      border-color: var(--accent-color);
+      color: #fff;
+    }
+
+    .btn-main:hover {
+      background: #b1832f;
+      border-color: #b1832f;
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      background: #f5f5f7;
+    }
+
+    .hero-title {
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .3rem .75rem;
+      border-radius: 999px;
+      background: #e7edf9;
+      font-size: .8rem;
+      margin-bottom: .75rem;
+      color: var(--primary-color);
+    }
+
+    .hero-tagline {
+      font-size: .95rem;
+      color: #6c757d;
+    }
+
+    .hero-img {
+      border-radius: .75rem;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    /* Section titles */
+    .section-title span {
+      display: inline-block;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    .section-title h2 {
+      font-weight: 700;
+      margin-top: .5rem;
+      color: var(--primary-color);
+    }
+
+    /* Practice cards */
+    .practice-card {
+      border-radius: .75rem;
+      border: 1px solid #e5e5e5;
+      padding: 1.25rem 1.1rem;
+      height: 100%;
+      background: #fff;
+    }
+
+    .practice-card h5 {
+      font-size: 1rem;
+      margin-bottom: .4rem;
+    }
+
+    .practice-tag {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #6c757d;
+    }
+
+    /* Simple quote section */
+    .quote-section {
+      background: #0b2f6a;
+      color: #f8f9fa;
+      padding: 3rem 0;
+    }
+
+    .quote-mark {
+      font-size: 2.5rem;
+      line-height: 1;
+      color: var(--accent-color);
+    }
+
+    /* Contact form */
+    .form-control:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 .2rem rgba(200,155,60,.25);
+    }
+
+    /* Footer */
+    footer {
+      background: #111826;
+      color: #d2d6e0;
+      padding: 1.75rem 0;
+      font-size: .85rem;
+    }
+
+    footer a {
+      color: #e0b95a;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="border-bottom bg-white sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <span class="logo-box">RS</span>
+        <span class="fw-semibold">Adv. Raj <span class="text-primary">Sharma</span></span>
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- simple static nav (collapse button visual only, no JS needed) -->
+      <div class="collapse navbar-collapse show" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#practice">Practice Areas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a href="#contact" class="btn btn-main btn-sm">Request Consultation</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <div class="hero-badge">
+          ⚖️ High Court & District Court
+        </div>
+        <h1 class="hero-title mb-3">
+          Professional Legal Help<br>When You Need It Most.
+        </h1>
+        <p class="hero-tagline mb-3">
+          Criminal, civil and family matters ke liye trusted legal guidance.
+          Clear advice, practical solutions and focused representation.
+        </p>
+        <div class="mb-3">
+          <strong>Experience:</strong> 8+ years in litigation & legal consulting.
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="#contact" class="btn btn-main">
+            Book First Consultation
+          </a>
+          <a href="#practice" class="btn btn-outline-secondary">
+            View Practice Areas
+          </a>
+        </div>
+        <p class="mt-3 small text-muted">
+          Call for urgent matters: <strong>+91-98765-43211</strong>
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <img
+          src="https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg"
+          alt="Advocate at work"
+          class="img-fluid hero-img"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-md-5">
+        <img
+          src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg"
+          alt="Law office"
+          class="img-fluid rounded shadow-sm"
+        >
+      </div>
+      <div class="col-md-7">
+        <div class="section-title mb-2">
+          <span>About</span>
+          <h2>Advocate Raj Sharma</h2>
+        </div>
+        <p class="text-muted mb-2">
+          Adv. Raj Sharma ek practising advocate hain jo criminal, civil aur family disputes
+          me clients ko represent karte hain. Focus simple hai – clear communication,
+          honest advice aur timely action.
+        </p>
+        <p class="text-muted mb-2">
+          Har case ko personal attention diya jata hai – chahe wo bail application ho,
+          property dispute ho ya drafting of legal notices and agreements.
+        </p>
+        <ul class="text-muted small mb-0">
+          <li>• Regular appearances in District & Sessions Court</li>
+          <li>• Drafting: notices, agreements, complaints, petitions</li>
+          <li>• Client-friendly explanation of legal process (Hindi + English)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section id="practice" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4 section-title">
+      <span>Practice Areas</span>
+      <h2>How We Can Help You</h2>
+      <p class="text-muted mb-0">
+        Few focused areas jahan par regular practise ki jati hai.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="practice-card">
+          <div class="practice-tag mb-1">Criminal Law</div>
+          <h5>Anticipatory & Regular Bail</h5>
+          <p class="small text-muted mb-0">
+            FIR, arrest, bail application, quashing petitions and trial representation
+            in criminal matters.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="practice-card">
+          <div class="practice-tag mb-1">Civil & Property</div>
+          <h5>Property & Recovery Matters</h5>
+          <p class="small text-muted mb-0">
+            Property dispute, partition suits, money recovery, agreements, and injunction
+            applications.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="practice-card">
+          <div class="practice-tag mb-1">Family Law</div>
+          <h5>Marriage & Family Disputes</h5>
+          <p class="small text-muted mb-0">
+            Divorce, maintenance, domestic violence, custody and mutual settlement drafting.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMPLE QUOTE SECTION -->
+<section class="quote-section">
+  <div class="container">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-1 text-md-end">
+        <div class="quote-mark">“</div>
+      </div>
+      <div class="col-md-11">
+        <p class="mb-1">
+          Justice delayed should not become justice denied. Isiliye har matter me
+          documents clear rakhna, time se filing karna aur court dates ka dhyaan rakhna
+          hamari priority hai.
+        </p>
+        <p class="mb-0 small text-warning">
+          — Adv. Raj Sharma
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <div class="section-title mb-3">
+          <span>Contact</span>
+          <h2>Book a Meeting</h2>
+        </div>
+        <p class="text-muted mb-2">
+          Form fill karne ke baad aapko call / WhatsApp ke through confirmation di jayegi.
+          First short consultation slot generally 20–30 minutes ka hota hai.
+        </p>
+        <p class="text-muted small mb-2">
+          <strong>Chamber Address:</strong><br>
+          Chamber No. 12, District Court Complex,<br>
+          Near Collectorate, Indore (M.P.)
+        </p>
+        <p class="text-muted small mb-1">
+          <strong>Phone:</strong> +91-98765-43211
+        </p>
+        <p class="text-muted small mb-0">
+          <strong>Email:</strong> adv.rajsharma@example.com
+        </p>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+            <h5 class="mb-3">Request Consultation</h5>
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Full Name</label>
+                  <input type="text" class="form-control" placeholder="Your name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Mobile Number</label>
+                  <input type="tel" class="form-control" placeholder="+91-XXXXXXXXXX" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Preferred Date</label>
+                  <input type="date" class="form-control">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Type of Matter</label>
+                  <select class="form-select">
+                    <option selected>Choose...</option>
+                    <option>Criminal</option>
+                    <option>Civil / Property</option>
+                    <option>Family / Marriage</option>
+                    <option>Drafting / Opinion</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Brief Details</label>
+                  <textarea class="form-control" rows="3" placeholder="Shortly describe your matter..."></textarea>
+                </div>
+                <div class="col-12 d-grid">
+                  <button type="submit" class="btn btn-main">
+                    Submit Request
+                  </button>
+                </div>
+                <div class="col-12">
+                  <p class="small text-muted mb-0">
+                    Sharing details does not create an advocate–client relationship until confirmed.
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span>© 2025 Adv. Raj Sharma. All rights reserved.</span>
+      <span>Designed for advocates & legal professionals.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+}
+
+#container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+}
+
+/* Header */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+}
+
+#logo_section img {
+    height: 60px;
+}
+
+#heading_section h1 {
+    font-size: 28px;
+}
+
+/* Navigation */
+#nav {
+    position: relative;
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+#nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+#nav ul li a:hover,
+#nav ul li a.active {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+/* Hamburger */
+#humber {
+    display: none;
+    height: 30px;
+    cursor: pointer;
+}
+
+#hum {
+    display: none;
+}
+
+/* Content */
+#content {
+    padding: 20px;
+}
+
+#content h1 {
+    margin-bottom: 15px;
+}
+
+#content p {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+#content ul {
+    margin-left: 20px;
+    list-style: disc;
+}
+
+/* Contact form */
+#contact_form input,
+#contact_form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+#contact_form button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+#contact_form button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+#footer {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #header {
+        flex-wrap: wrap;
+    }
+
+    #heading_section h1 {
+        font-size: 22px;
+    }
+
+    #nav ul {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        flex-direction: column;
+        width: 150px;
+        display: none;
+        padding: 10px 0;
+    }
+
+    #nav ul li {
+        text-align: right;
+        padding: 5px 10px;
+    }
+
+    #humber {
+        display: block;
+    }
+
+    #hum:checked + ul {
+        display: flex;
+    }
+}

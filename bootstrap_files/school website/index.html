@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bright Future International School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS (only CSS, no JS) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    /* Navbar */
+    .top-bar {
+      background: #0d6efd;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .navbar-brand span {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+      color: #fff;
+      padding: 5rem 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 4vw, 3.5rem);
+      font-weight: 700;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+    }
+
+    .hero-image-box {
+      background: #fff;
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.18);
+    }
+
+    .hero-stat {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* Section generic */
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      color: #6c757d;
+      max-width: 540px;
+    }
+
+    /* Services */
+    .service-card {
+      border-radius: 1.25rem;
+      border: 1px solid #e5e7eb;
+      padding: 1.8rem 1.6rem;
+      height: 100%;
+      transition: all 0.2s ease-in-out;
+      background: #fff;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 1.2rem 2rem rgba(15, 23, 42, 0.12);
+    }
+
+    .service-icon-circle {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(13, 110, 253, 0.09);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    /* About */
+    #about {
+      background: #f8fafc;
+    }
+
+    .about-highlight {
+      border-left: 4px solid #0d6efd;
+      padding-left: 1rem;
+      margin-top: 1rem;
+    }
+
+    /* Infinite Carousel (pure CSS) */
+    .infinite-carousel-wrapper {
+      overflow: hidden;
+      position: relative;
+      border-radius: 1rem;
+      background: #0b1727;
+      padding: 2rem 0;
+    }
+
+    .infinite-carousel-title {
+      color: #f8fafc;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .infinite-carousel {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 40s linear infinite;
+      gap: 3rem;
+    }
+
+    .badge-pill {
+      border-radius: 999px;
+    }
+
+    .carousel-item-pill {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: #e2e8f0;
+      padding: 0.7rem 1.4rem;
+      white-space: nowrap;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .carousel-dot {
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 999px;
+      background: #0d6efd;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* CTA strip */
+    .cta-strip {
+      background: linear-gradient(120deg, #0d6efd, #20c997);
+      color: #fff;
+      border-radius: 1.25rem;
+      padding: 1.8rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      color: #cbd5f5;
+    }
+
+    footer a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    footer a:hover {
+      color: #0d6efd;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.85rem;
+    }
+
+    /* Small helpers */
+    .tag-pill {
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top bar -->
+  <div class="top-bar py-1">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div>
+        Call: <strong>+91-98765-43210</strong> &nbsp;•&nbsp;
+        Email: <strong>info@brightfutureschool.in</strong>
+      </div>
+      <div class="d-flex gap-2">
+        <span class="tag-pill">CBSE Curriculum</span>
+        <span class="tag-pill">Nursery – Grade XII</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navbar (no JS collapse, simple desktop style) -->
+  <nav class="navbar navbar-expand-md bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <span class="rounded-circle bg-primary d-inline-flex align-items-center justify-content-center" style="width: 34px; height: 34px;">
+          <span class="text-white fw-bold">BF</span>
+        </span>
+        <span>Bright Future School</span>
+      </a>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-md-0 d-flex align-items-center gap-2">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="academics.html">Academics</a></li>
+        <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-2">
+          <a class="btn btn-primary btn-sm px-3" href="admissions.html">Apply Now</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <div class="hero-badge mb-3">
+            <span class="badge bg-light text-dark rounded-pill">New</span>
+            <span>Admissions Open 2025–26</span>
+          </div>
+          <h1>Where every child<br>builds a bright future.</h1>
+          <p class="hero-subtitle mt-3">
+            Bright Future International School is a modern CBSE school focused on academics,
+            values and real-life skills — all in a safe, tech-enabled campus.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="admissions.html" class="btn btn-light text-primary fw-semibold px-4">
+              Explore Admissions
+            </a>
+            <a href="#about" class="btn btn-outline-light px-4">
+              Learn About Our School
+            </a>
+          </div>
+          <div class="d-flex flex-wrap gap-4 mt-4">
+            <div>
+              <div class="hero-stat">1,200+</div>
+              <small>Students currently enrolled</small>
+            </div>
+            <div>
+              <div class="hero-stat">15+ Years</div>
+              <small>Of academic excellence</small>
+            </div>
+            <div>
+              <div class="hero-stat">100%</div>
+              <small>Board exam pass rate</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="hero-image-box">
+            <h5 class="mb-3">Life at Bright Future</h5>
+            <p class="mb-4 text-muted">
+              A balanced day with classroom learning, sports, art, music, labs and technology —
+              guided by experienced teachers and a caring staff.
+            </p>
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="border rounded-4 p-3 h-100">
+                  <h6 class="fw-semibold">Smart Classrooms</h6>
+                  <p class="small text-muted mb-0">
+                    Interactive boards, project-based learning and digital content in every class.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="border rounded-4 p-3 h-100">
+                  <h6 class="fw-semibold">Sports & Activities</h6>
+                  <p class="small text-muted mb-0">
+                    Football, basketball, skating, yoga, dance, music and more.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="border rounded-4 p-3 h-100">
+                  <h6 class="fw-semibold">STEM & Coding Lab</h6>
+                  <p class="small text-muted mb-0">
+                    Robotics kits, coding clubs and hands-on experiments.
+                  </p>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="border rounded-4 p-3 h-100">
+                  <h6 class="fw-semibold">Safe Transport</h6>
+                  <p class="small text-muted mb-0">
+                    GPS-enabled buses with lady attendants and trained drivers.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="small text-muted mt-3 mb-0">
+              CBSE Affiliation No: 123456 • Co-educational • Nursery to Grade XII
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section (What we offer) -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+        <div>
+          <h2 class="section-title">What makes our school different?</h2>
+          <p class="section-subtitle">
+            A complete learning ecosystem designed around your child’s academic journey, personal growth and overall wellbeing.
+          </p>
+        </div>
+        <div>
+          <a href="academics.html" class="btn btn-outline-primary btn-sm">View Academics Details</a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon-circle">
+              📚
+            </div>
+            <h5 class="mb-2">Strong Academic Foundation</h5>
+            <p class="text-muted mb-3">
+              Structured CBSE curriculum with clear learning outcomes, regular assessments and personalized support for every student.
+            </p>
+            <ul class="small text-muted ps-3 mb-0">
+              <li>Experienced & qualified teachers</li>
+              <li>Concept-based teaching, not rote learning</li>
+              <li>Doubt-clearing and remedial classes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon-circle">
+              💻
+            </div>
+            <h5 class="mb-2">Technology-Enabled Learning</h5>
+            <p class="text-muted mb-3">
+              Smart classrooms, digital content, coding, robotics and blended learning to prepare students for the future.
+            </p>
+            <ul class="small text-muted ps-3 mb-0">
+              <li>Smart boards in all classrooms</li>
+              <li>Coding from early grades</li>
+              <li>Online homework & parent app</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon-circle">
+              🏅
+            </div>
+            <h5 class="mb-2">Beyond the Classroom</h5>
+            <p class="text-muted mb-3">
+              Sports, arts, clubs, competitions and events that help students discover their strengths and build confidence.
+            </p>
+            <ul class="small text-muted ps-3 mb-0">
+              <li>Weekly sports & fitness sessions</li>
+              <li>Music, dance & visual arts</li>
+              <li>Leadership & life skills programs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Us Section (same page) -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="section-title">About Bright Future School</h2>
+          <p class="section-subtitle mb-3">
+            We are a next-generation CBSE school, combining strong academics with values, life skills and global exposure.
+          </p>
+          <p class="mb-3">
+            Started in 2010, Bright Future International School was founded by a group of educators and professionals
+            who believed that every child deserves a safe, joyful and inspiring place to learn. Our campus is designed
+            to support curiosity, collaboration and creativity.
+          </p>
+          <p class="mb-3">
+            From early years to senior secondary, we focus on building strong concepts, communication skills, discipline
+            and character. Small class sizes and a warm environment ensure that each child is seen, heard and supported.
+          </p>
+          <div class="about-highlight">
+            <strong>Our mission:</strong>
+            <p class="mb-0 small">
+              To nurture confident, responsible and compassionate individuals who are ready for the real world —
+              not just for exams.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="border rounded-4 p-3 h-100 bg-white">
+                <h6 class="fw-semibold">Our Values</h6>
+                <p class="small text-muted mb-0">
+                  Respect, integrity, curiosity, empathy and excellence guide every decision we make.
+                </p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="border rounded-4 p-3 h-100 bg-white">
+                <h6 class="fw-semibold">Our Campus</h6>
+                <p class="small text-muted mb-0">
+                  Wi-Fi enabled campus with labs, library, activity rooms, playgrounds and dedicated zones for younger children.
+                </p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="border rounded-4 p-3 h-100 bg-white">
+                <h6 class="fw-semibold">Parent Partnership</h6>
+                <p class="small text-muted mb-0">
+                  Regular PTMs, open communication and a dedicated parent app keep families informed and involved.
+                </p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="border rounded-4 p-3 h-100 bg-white">
+                <h6 class="fw-semibold">Student Support</h6>
+                <p class="small text-muted mb-0">
+                  Counselling, mentoring and career guidance for older students to plan their next steps.
+                </p>
+              </div>
+            </div>
+          </div>
+          <p class="small text-muted mt-3 mb-0">
+            <strong>Location:</strong> Near City Park, Ring Road, Your City, India.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infinite Carousel Section (testimonials / highlights) -->
+  <section class="py-5">
+    <div class="container">
+      <div class="infinite-carousel-wrapper">
+        <div class="infinite-carousel-title">
+          Voices & Highlights from our community
+        </div>
+        <div class="infinite-carousel">
+          <!-- First set -->
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> “My child loves coming to school every day.” – Parent of Grade 3
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> Ranked among the top 10 CBSE schools in the city.
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> 30+ state and national level sports medals in the last 3 years.
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> Dedicated career counselling for Grade 10 & 12 students.
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> Weekly club activities: science, coding, theatre, environment & more.
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> “Teachers are supportive and approachable.” – Alumni, Batch of 2022
+          </div>
+
+          <!-- Duplicate set to make loop seamless -->
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> “My child loves coming to school every day.” – Parent of Grade 3
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> Ranked among the top 10 CBSE schools in the city.
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> 30+ state and national level sports medals in the last 3 years.
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> Dedicated career counselling for Grade 10 & 12 students.
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> Weekly club activities: science, coding, theatre, environment & more.
+          </div>
+          <div class="carousel-item-pill">
+            <span class="carousel-dot"></span> “Teachers are supportive and approachable.” – Alumni, Batch of 2022
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Strip -->
+  <section class="pb-5">
+    <div class="container">
+      <div class="cta-strip d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+        <div>
+          <h5 class="mb-1">Ready to plan your child’s schooling journey?</h5>
+          <p class="mb-0 small">
+            Book a campus visit and meet our academic counsellor to understand the right class, curriculum and fee structure.
+          </p>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="contact.html" class="btn btn-light btn-sm px-3">Book a Campus Visit</a>
+          <a href="admissions.html" class="btn btn-outline-light btn-sm px-3">Download Prospectus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-5">
+    <div class="container pb-4">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="mb-3">Bright Future School</h5>
+          <p class="small">
+            A CBSE-affiliated, co-educational day school offering quality education, strong values
+            and a joyful learning environment from Nursery to Grade XII.
+          </p>
+        </div>
+        <div class="col-md-2">
+          <h6 class="mb-3">Explore</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About School</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="contact.html">Contact & Location</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6 class="mb-3">Contact</h6>
+          <p class="small mb-1">
+            Near City Park, Ring Road,<br>
+            Your City – 000000, India
+          </p>
+          <p class="small mb-1">
+            Phone: +91-98765-43210<br>
+            Email: info@brightfutureschool.in
+          </p>
+          <p class="small mb-0">
+            Office hours: Mon–Sat, 8:00 AM – 3:00 PM
+          </p>
+        </div>
+        <div class="col-md-3">
+          <h6 class="mb-3">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#">Fee Structure (PDF)</a></li>
+            <li><a href="#">School Calendar</a></li>
+            <li><a href="#">Transport Routes</a></li>
+            <li><a href="#">Careers with us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom pt-3 mt-3 d-flex flex-wrap justify-content-between gap-2">
+        <div class="small">
+          © 2025 Bright Future International School. All rights reserved.
+        </div>
+        <div class="small">
+          <a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
