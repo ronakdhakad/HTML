@@ -3,51 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restoria | Home</title>
-    <link rel="stylesheet" href="public/css/style.css">
+    <title>Apna Hotel | Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="container">
-        <div id="header">
-            <div id="logo_section">
-                <img src="public/images/logo3.jpg" id="logo" alt="Restoria Logo">
-            </div>
-            <div id="heading_section">
-                <h1>Restoria</h1>
-            </div>
-            <div id="nav">
-                <label for="hum">
-                    <img src="public/images/banner2.avif" id="humber" alt="Menu">
-                </label>
-                <input type="checkbox" id="hum">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
 
-        <div id="content">
-            <h1>What makes Restoria Special?</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero nam vel ad vitae animi,
-                officia provident earum, iusto porro saepe maiores. Error sit dolor nemo, eligendi voluptates
-                laboriosam eveniet asperiores amet alias, deserunt, neque dolore perspiciatis!
-            </p>
-            <p>
-                Ea unde itaque tenetur velit possimus debitis nemo delectus cumque neque ipsam, obcaecati eos a?
-                Ullam itaque, aut optio impedit pariatur ipsam veritatis mollitia, vitae doloribus minima accusamus
-                voluptatum. Illum provident et ad corporis deserunt quaerat asperiores officia ea officiis esse minima.
-            </p>
-        </div>
+<header class="site-header">
+    <div class="logo">Apna<span>Hotel</span></div>
 
-        <div id="footer">
-            <center>
-                All Rights Reserved &trade; | Designed By ITEP-16 <sup>th</sup> Batch &copy;
-            </center>
-        </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <nav class="site-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="page">
+    <div class="hero-wrap">
+        <section class="hero">
+            <div class="hero-text">
+                <div class="hero-tag">A premium stay in the heart of the city</div>
+                <h1>Relax. Refresh. <br> Feel at Home at Apna Hotel.</h1>
+                <p>
+                    Experience warm hospitality, spacious rooms and delicious food. 
+                    Whether you are travelling for business or leisure, Apna Hotel makes every stay memorable.
+                </p>
+                <div class="hero-cta">
+                    <a href="booking.html" class="btn btn-primary">Book a Room</a>
+                    <a href="gallery.html" class="btn btn-outline">View Gallery</a>
+                </div>
+
+                <form class="home-booking-strip fade-delay-1">
+                    <div>
+                        <label>Check-in</label>
+                        <input type="date">
+                    </div>
+                    <div>
+                        <label>Check-out</label>
+                        <input type="date">
+                    </div>
+                    <div>
+                        <label>Guests</label>
+                        <input type="number" min="1" value="2">
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary">Quick Check</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="hero-image"></div>
+        </section>
     </div>
+
+    <section class="page-narrow" style="margin-top: 40px;">
+        <h2 class="section-title">Why Guests Love Apna Hotel</h2>
+        <p class="section-subtitle">
+            We combine modern design with traditional Indian hospitality. Every detail is thoughtfully crafted to make you feel comfortable.
+        </p>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="service-icon">🛏️</div>
+                <div class="service-title">Spacious Rooms</div>
+                <p>Cozy beds, premium linen, smart TV and a peaceful atmosphere to help you unwind after a long day.</p>
+            </div>
+            <div class="card">
+                <div class="service-icon">🍽️</div>
+                <div class="service-title">Multi-cuisine Restaurant</div>
+                <p>Enjoy delicious Indian, Chinese and Continental dishes prepared by experienced chefs.</p>
+            </div>
+            <div class="card">
+                <div class="service-icon">📶</div>
+                <div class="service-title">Perfect for Business</div>
+                <p>High-speed Wi-Fi, meeting spaces and a central location make us ideal for business travellers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-narrow" style="margin-top: 40px;">
+        <h2 class="section-title">Glimpse of Our Spaces</h2>
+        <p class="section-subtitle fade-in-up">
+            From elegant rooms to bright dining areas, every corner of Apna Hotel is designed to feel welcoming.
+        </p>
+
+        <div class="gallery-grid fade-in-up fade-delay-2">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=80" alt="Hotel lobby">
+                <span>Lobby Lounge</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb2100d?auto=format&fit=crop&w=900&q=80" alt="Deluxe room">
+                <span>Deluxe Room</span>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=900&q=80" alt="Restaurant">
+                <span>Dining</span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    © 2025 Apna Hotel. All rights reserved.
+</footer>
+
 </body>
 </html>

@@ -3,49 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restoria | Services</title>
-    <link rel="stylesheet" href="public/css/style.css">
+    <title>Apna Hotel | Services</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="container">
-        <div id="header">
-            <div id="logo_section">
-                <img src="public/images/logo3.jpg" id="logo" alt="Restoria Logo">
+
+<header class="site-header">
+    <div class="logo">Apna<span>Hotel</span></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="page">
+    <div class="page-narrow">
+        <h1 class="section-title">Our Services</h1>
+        <p class="section-subtitle">
+            We offer a range of facilities to make your stay hassle-free and comfortable.
+            From comfortable rooms to curated dining and event spaces, Apna Hotel has you covered.
+        </p>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="service-icon">🛏️</div>
+                <div class="service-title">Accommodation</div>
+                <p>Choose from Deluxe, Executive and Suite categories, all featuring premium linen, work desk, Wi-Fi and 24x7 room service.</p>
             </div>
-            <div id="heading_section">
-                <h1>Restoria</h1>
+
+            <div class="card">
+                <div class="service-icon">🍛</div>
+                <div class="service-title">Dining & Room Service</div>
+                <p>Our in-house restaurant serves breakfast, lunch and dinner. Craving a midnight snack? Order from our 24x7 room service menu.</p>
             </div>
-            <div id="nav">
-                <label for="hum">
-                    <img src="public/images/banner2.avif" id="humber" alt="Menu">
-                </label>
-                <input type="checkbox" id="hum">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+
+            <div class="card">
+                <div class="service-icon">🏢</div>
+                <div class="service-title">Banquets & Events</div>
+                <p>Host business meetings, conferences or family functions. Our team helps you with seating, audio-visual and catering arrangements.</p>
+            </div>
+
+            <div class="card">
+                <div class="service-icon">🚗</div>
+                <div class="service-title">Travel Desk</div>
+                <p>Need an airport pickup, local sightseeing or outstation cab? Our travel desk will assist you with bookings and suggestions.</p>
+            </div>
+
+            <div class="card">
+                <div class="service-icon">🧺</div>
+                <div class="service-title">Laundry Service</div>
+                <p>Same-day laundry and ironing service available for in-house guests. Express service on request.</p>
+            </div>
+
+            <div class="card">
+                <div class="service-icon">🧘</div>
+                <div class="service-title">Leisure & Fitness</div>
+                <p>Unwind at our rooftop sitting area (coming soon) or take a stroll around the neighbourhood with our curated walking routes.</p>
             </div>
         </div>
 
-        <div id="content">
-            <h1>Our Services</h1>
-            <p>
-                Here you can list the services you provide. Below is a simple example:
-            </p>
-            <ul>
-                <li>Service 1 – Short description of service 1.</li>
-                <li>Service 2 – Short description of service 2.</li>
-                <li>Service 3 – Short description of service 3.</li>
-            </ul>
-        </div>
-
-        <div id="footer">
-            <center>
-                All Rights Reserved &trade; | Designed By ITEP-16 <sup>th</sup> Batch &copy;
-            </center>
-        </div>
+        <p style="margin-top: 24px; font-size: 14px; color: var(--muted);">
+            Looking for something specific like long-stay packages or corporate rates? 
+            <a href="contact.html">Get in touch with us</a> and we’ll be happy to share a customised offer.
+        </p>
     </div>
+</main>
+
+<footer class="site-footer">
+    Relax and enjoy — we handle the details.
+</footer>
+
 </body>
 </html>

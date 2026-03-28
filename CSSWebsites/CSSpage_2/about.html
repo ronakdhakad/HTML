@@ -3,50 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restoria | About</title>
-    <link rel="stylesheet" href="public/css/style.css">
+    <title>Apna Hotel | About Us</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="container">
-        <div id="header">
-            <div id="logo_section">
-                <img src="public/images/logo3.jpg" id="logo" alt="Restoria Logo">
+
+<header class="site-header">
+    <div class="logo">Apna<span>Hotel</span></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+    <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="booking.html">Booking</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main class="page">
+    <div class="page-narrow">
+        <h1 class="section-title">About Apna Hotel</h1>
+        <p class="section-subtitle">
+            Apna Hotel was created with a simple idea — to offer the warmth of home with the comfort of a modern hotel.
+            Over the years, we’ve hosted thousands of guests from across India and the world.
+        </p>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3>Our Story</h3>
+                <p style="margin-top: 8px;">
+                    What started as a small family-run guest house has grown into a full-service hotel,
+                    known for its personalised care and attention to detail. We believe hospitality is not just about rooms,
+                    but about how we make you feel during your stay.
+                </p>
+                <p style="margin-top: 8px;">
+                    From morning greetings at breakfast to helping you plan your day in the city, our team is always ready to assist you.
+                </p>
             </div>
-            <div id="heading_section">
-                <h1>Restoria</h1>
-            </div>
-            <div id="nav">
-                <label for="hum">
-                    <img src="public/images/banner2.avif" id="humber" alt="Menu">
-                </label>
-                <input type="checkbox" id="hum">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+
+            <div class="card">
+                <h3>Our Promise</h3>
+                <ul class="highlight-list">
+                    <li>Clean and well-maintained rooms.</li>
+                    <li>Transparent pricing with no hidden charges.</li>
+                    <li>Helpful staff available around the clock.</li>
+                    <li>Good food and a peaceful environment.</li>
+                    <li>Continuous improvement based on guest feedback.</li>
                 </ul>
             </div>
         </div>
-
-        <div id="content">
-            <h1>About Restoria</h1>
-            <p>
-                Restoria is a simple demo website used to practice HTML and CSS. 
-                Here you can describe your company, restaurant, or project in a short and clear way.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ullam, omnis earum maiores 
-                fuga commodi nobis vel quos, esse, quo asperiores dolore beatae autem assumenda cumque debitis
-                fugiat cum perferendis.
-            </p>
-        </div>
-
-        <div id="footer">
-            <center>
-                All Rights Reserved &trade; | Designed By ITEP-16 <sup>th</sup> Batch &copy;
-            </center>
-        </div>
     </div>
+</main>
+
+<footer class="site-footer">
+    Apna Hotel — where every guest is treated like family.
+</footer>
+
 </body>
 </html>

@@ -10,7 +10,7 @@
 
 #container {
     height: auto;
-    width: 95%;
+    width: 100%;
     margin: auto;
     /* background-color: grey; */
 }
@@ -88,11 +88,10 @@
 }
 #banner{
     height: 520px;
-    background-color: red;
 }
 #bannerImg{
     height: 520px;
-    width: 1194px;
+    width: 100%;
 }
 #mqdemo{
     padding: 10px;
@@ -224,7 +223,7 @@ iframe{
 @media screen and (max-width:400px){
 #container {
     height: auto;
-    width: 95%;
+    width: 100%;
     margin: auto;
     /* background-color: grey; */
 }
